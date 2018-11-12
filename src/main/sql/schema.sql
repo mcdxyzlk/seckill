@@ -42,3 +42,6 @@ PRIMARY KEY(seckill_id,user_phone),/*联合主键*/
 key idx_create_time(create_time)
 ) ENGINE=InnoDB DEFAULT=utf8 COMMENT='秒杀成功明细表';
 
+
+#创建表时表字段名字不能加单引号
+
