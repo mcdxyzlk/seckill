@@ -7,6 +7,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -24,6 +26,9 @@ public class SeckillDaoTest {
 
     @Test
     public void reduceNumber() {
+        Date killTime = new Date();
+        int updateCount = seckillDao.reduceNumber(1000L,killTime);
+        System.out.println(updateCount);
 
     }
 
@@ -39,5 +44,12 @@ public class SeckillDaoTest {
 
     @Test
     public void queryAll() {
+        //Caused by: org.apache.ibatis.binding.BindingException:
+        // Parameter 'offset' not found. Available parameters are [0, 1, param1, param2]
+        //java没有保存形式参数的记录:queryAll(int offset,int limit) ->queryAll(arg0,arg1)
+       List<Seckill> seckillList = seckillDao.queryAll(0,100);
+       for(Seckill seckill : seckillList){
+           System.out.println(seckill);
+       }
     }
 }
