@@ -13,6 +13,8 @@ import org.seckill.exception.SeckillException;
 import org.seckill.service.SeckillService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
 import java.util.Date;
@@ -23,12 +25,14 @@ import java.util.List;
  * @Date 2018/11/20 9:58 PM
  * @Description: TODO
  **/
+@Service
 public class SeckillServiceImpl implements SeckillService {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    //注入service依赖
+    @Autowired
     private SeckillDao seckillDao;
-
+    @Autowired
     private SuccessKilledDao successKilledDao;
     //md5盐字符串,用于混淆md5
     private final String salt = "sdbnihbash87322&*^%%";
