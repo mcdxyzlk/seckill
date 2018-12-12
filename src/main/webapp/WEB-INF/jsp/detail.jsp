@@ -20,14 +20,14 @@
             <div class="panel-heading ">
                 <h1>${seckill.name}</h1>
             </div>
-        </div>
-        <div class="panel-body">
-            <h2 class="text-danger">
-                <!-- 显示time图标 -->
-                <span class="glyphicon glyphicon-time"></span>
-                <!-- 展示倒计时 -->
-                <span class="glyphicon" id="seckill-box"></span>
-            </h2>
+            <div class="panel-body">
+                <h2 class="text-danger">
+                    <!-- 显示time图标 -->
+                    <span class="glyphicon glyphicon-time"></span>
+                    <!-- 展示倒计时 -->
+                    <span class="glyphicon" id="seckill-box"></span>
+                </h2>
+            </div>
         </div>
     </div>
    <!-- 登录弹出层，输入电话 -->
@@ -84,7 +84,7 @@
     $(function(){
         //使用el表达式传入参数
         seckill.detail.init({
-            seckillId:${seckill.id},
+            seckillId:${seckill.seckillId},
             startTime:${seckill.startTime.time},//毫秒
             endTime:${seckill.endTime.time}
         });
